@@ -1,0 +1,71 @@
+<table mat-table #table [dataSource]="datasource" class="mat-elevation-z8">
+    <ng-container matColumnDef="icon">
+        <th mat-header-cell *matHeaderCellDef>icon</th>
+        <td mat-cell *matCellDef="let element">
+          <p><img [src]='element.icon' width=50 height=50/></p>
+        </td>
+     </ng-container>
+    <ng-container matColumnDef="ISDN">
+       <th mat-header-cell *matHeaderCellDef>ISDN</th>
+       <td mat-cell *matCellDef="let element">
+         <p>{{element.ISDN}}</p>
+       </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>name</th>
+        <td mat-cell *matCellDef="let element">
+          <p>{{element.name}}</p>
+        </td>
+     </ng-container>
+   
+     <ng-container matColumnDef="author">
+        <th mat-header-cell *matHeaderCellDef>author</th>
+        <td mat-cell *matCellDef="let element">
+          <p>{{element.author}}</p>
+        </td>
+     </ng-container>
+
+     <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>price</th>
+        <td mat-cell *matCellDef="let element">
+          <p>{{element.price}}</p>
+        </td>
+     </ng-container>
+
+     <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef >
+             action
+      </th>
+      <td mat-cell *matCellDef="let element" class="action-button">
+             <button mat-icon-button  (click)="addBook(element.icon,element.ISDN,element.name,element.author,element.price)" >
+              <mat-icon>library_books</mat-icon>
+             </button>
+      </td>
+       <!-- <mat-menu #menu>
+        <button mat-menu-item>
+          <mat-icon>library_books</mat-icon>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>edit</mat-icon>
+        </button>
+       </mat-menu> -->
+   </ng-container>
+
+     <!-- <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>description</th>
+        <td mat-cell *matCellDef="let element">
+          <p>{{element.description}}</p>
+        </td>
+     </ng-container> -->
+
+     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+     <tr mat-row *matRowDef="let row; columns:displayedColumns;" class="table-rows"></tr>
+     <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell no-data" [attr.colspan]="displayedColumns.length">
+        No Data found
+      </td>
+     </tr>
+     
+
+</table>

@@ -1,0 +1,10 @@
+<p>Admin!</p>
+<nav>
+    <a routerLink="./addbook" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" ariaCurrentWhenActive="page">Book</a>
+    <a routerLink="./members" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" ariaCurrentWhenActive="page">Members</a>&nbsp;
+    <button (click)="logout()">Logout</button>
+</nav>
+<br>
+<br>
+<br>
+<router-outlet></router-outlet>

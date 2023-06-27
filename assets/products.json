@@ -1,0 +1,30 @@
+[
+  {
+     "ISDN":1,
+     "name":"Atomic Habits",
+     "author":"James Clear",
+     "price":250,
+     "description":"These small changes in your habits will have a transformatio effects on your life",
+     "icon":""
+ },
+ {
+    "ISDN":2,
+    "name":"Say Less and Ask More",
+    "author":"Michael Bungay",
+    "price":1900,
+    "description":"This book givs you seven question and tools to make them an everydy way to work less hard and have ore impact",
+    "icon":"assets/image2.jpg"
+},
+
+{
+    "ISDN":2,
+    "name":"It ends with us",
+    "author":"Michael Bungay",
+    "price":250,
+    "description":"This book givs you seven question and tools to make them an everydy way to work less hard and have ore impact",
+    "icon":"assets/image1.jpg"
+}
+
+]
+
+

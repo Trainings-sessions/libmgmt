@@ -1,0 +1,21 @@
+<h3>User Login</h3>
+<form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+  UserName :   <input type="text" formControlName="username" id="username" required/>
+  &nbsp;
+  <!-- <span class="text-invalid" *ngIf="username.invalid && (username.dirty||submitted||username.touched) && username?.errors?.['required']">
+    User name is required
+  </span>  -->
+  <span class="text-invalid" *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched && loginForm.controls['username'].errors?.['required']">
+    User name is required
+  </span> 
+  <br/>
+  Password :    <input type="password" formControlName="password" id="password" required/> &nbsp;&nbsp;
+  <span class="text-invalid" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched && loginForm.controls['password'].errors?.['required']">
+   Password is required
+  </span> 
+
+  <span class="text-invalid" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched &&loginForm.controls['password'].errors?.['invalidPassword']">
+    Password should have minimum 8 character,atleast 1 uppercase letter, 1 lowercase letter and 1
+  </span> 
+  <br>  <button type="submit">Login</button>
+</form>

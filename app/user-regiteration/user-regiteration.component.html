@@ -1,0 +1,53 @@
+<form name="regForm" #rf="ngForm"  (ngSubmit)="rf.form.valid && onFormSubmit()" [appMatchPassword]="['password','confirmPassword']" >
+<div class="form-group">
+    <label>Name </label>
+    <input type="text" class="form-control" name="name" [(ngModel)]="regForm.name" required #name="ngModel"/>
+    <span *ngIf="rf.submitted && name.errors">&nbsp;Name is required </span>
+</div>
+
+<div class="form-group">
+    <label>User Name </label>
+    <input type="text" class="form-control" name="userName" [(ngModel)]="regForm.userName" required #userName="ngModel" minlength="2" maxlength="25"/>
+
+    <span *ngIf="rf.submitted && userName.errors">
+        <span *ngIf="userName.errors?.['required']">
+            User Name is required
+        </span>
+
+        <span *ngIf="userName.errors?.['minlength']">
+            User Name must be atlest 2 character
+        </span>
+
+        <span *ngIf="userName.errors?.['maxlength']">
+           User Name must be at most 25 character
+        </span>
+    </span>
+</div>
+
+<div class="form-group">
+    <label>Password </label>
+    <input type="password" class="form-control" name="password" [(ngModel)]="regForm.password" required #password="ngModel"/>
+</div>
+
+<div class="form-group">
+    <label>Confirm Password </label>
+    <input type="text" class="form-control" name="confirmPassword" [(ngModel)]="regForm.confirmPassword" required #confirmPassword="ngModel"/>
+
+    <span *ngIf="rf.submitted && confirmPassword.errors">
+        <span *ngIf="confirmPassword.errors?.['matching']">Confirm Password does not match</span>
+    </span>
+
+</div>
+
+<div class="form-group form-check">
+    <input type="checkbox" class="form-control" name="acceptTerms" [(ngModel)]="regForm.acceptTerms" required #acceptTerms="ngModel"/>
+    <label>I have read and agree to the Terms</label>
+
+</div>
+
+<div class="form-group">
+    <button type="submit" class="btn btn-primary">Register</button>
+    <button type="reset" (click)="rf.reset()" class="btn btn-warn">Reset</button>
+</div>
+    
+</form>

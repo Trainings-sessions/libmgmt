@@ -1,0 +1,13 @@
+nav a
+{
+    padding: 2rem;
+    font-size: 1 rem;
+    background-color: gray;
+    color: black;
+}
+
+nav a.active
+{
+    background-color: black;
+    color:white;
+} 
